@@ -13,7 +13,7 @@ const App = {
   },
 
   // GASのURL（デプロイ後に差し替え）
-  GAS_URL: 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec',
+  GAS_URL: 'https://script.google.com/macros/s/AKfycby46jmjs2NDxlGT68vmb8YjBG7zonF3BeoFSHmRYjCxYiluR8dCB5cXyWorm5_Ozdcu/exec',
 
   // ============================================================
   // 初期化
