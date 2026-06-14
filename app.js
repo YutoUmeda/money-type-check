@@ -277,7 +277,7 @@ const App = {
     // OGP画像（仮: 絵文字表示）
     const imgEl = document.getElementById('result-ogp-img');
     if (imgEl) {
-      imgEl.src = `images/${t.ogpImage}`;
+      imgEl.src = `images/${t.Image}`;
       imgEl.onerror = () => {
         imgEl.style.display = 'none';
         document.getElementById('result-type-emoji-fallback').style.display = 'flex';
@@ -310,14 +310,19 @@ const App = {
     setText('result-success-reason', t.successReason);
     // お金で失敗しやすい場面
     setText('result-failure-scene', t.failureScene);
-    // 相性の良いタイプ
+    // 相性の良いタイプ・悪いタイプ
     const goodType = MONEY_DATA.getTypeByName(t.goodMatch);
-    setText('result-good-match-emoji', goodType ? goodType.emoji : '✨');
+    if (goodType) {
+      const el = document.getElementById('result-good-match-emoji');
+      if (el) el.innerHTML = `<img src="images/${goodType.image}" alt="${goodType.name}" style="width:48px;height:48px;border-radius:50%;object-fit:cover;" onerror="this.outerHTML='${goodType.emoji}'">`;
+    }
     setText('result-good-match-name', t.goodMatch);
     setText('result-good-match-reason', t.goodMatchReason);
-    // 相性の悪いタイプ
     const badType = MONEY_DATA.getTypeByName(t.badMatch);
-    setText('result-bad-match-emoji', badType ? badType.emoji : '⚡');
+    if (badType) {
+      const el = document.getElementById('result-bad-match-emoji');
+      if (el) el.innerHTML = `<img src="images/${badType.image}" alt="${badType.name}" style="width:48px;height:48px;border-radius:50%;object-fit:cover;" onerror="this.outerHTML='${badType.emoji}'">`;
+    }
     setText('result-bad-match-name', t.badMatch);
     setText('result-bad-match-reason', t.badMatchReason);
     // あなたへのメッセージ
