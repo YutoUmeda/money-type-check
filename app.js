@@ -278,6 +278,7 @@ const App = {
     const imgEl = document.getElementById('result-ogp-img');
     if (imgEl) {
       imgEl.src = `images/${t.image}`;
+      imgEl.style.display = 'block';
       imgEl.onerror = () => {
         imgEl.style.display = 'none';
         document.getElementById('result-type-emoji-fallback').style.display = 'flex';
