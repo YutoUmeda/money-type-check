@@ -277,7 +277,7 @@ const App = {
     // OGP画像（仮: 絵文字表示）TODO: OGP画像追加後に t.image → t.ogpImage に戻す
     const imgEl = document.getElementById('result-ogp-img');
     if (imgEl) {
-      imgEl.src = `images/${t.Image}`;
+      imgEl.src = `images/${t.image}`;
       imgEl.onerror = () => {
         imgEl.style.display = 'none';
         document.getElementById('result-type-emoji-fallback').style.display = 'flex';
@@ -314,14 +314,14 @@ const App = {
     const goodType = MONEY_DATA.getTypeByName(t.goodMatch);
     if (goodType) {
       const el = document.getElementById('result-good-match-emoji');
-      if (el) el.innerHTML = `<img src="images/${goodType.image}" alt="${goodType.name}" style="width:48px;height:48px;border-radius:50%;object-fit:cover;" onerror="this.outerHTML='${goodType.emoji}'">`;
+      if (el) el.innerHTML = `<img src="images/${goodType.image}" alt="${goodType.name}" style="width:64px;height:64px;border-radius:50%;object-fit:cover;" onerror="this.outerHTML='${goodType.emoji}'">`;
     }
     setText('result-good-match-name', t.goodMatch);
     setText('result-good-match-reason', t.goodMatchReason);
     const badType = MONEY_DATA.getTypeByName(t.badMatch);
     if (badType) {
       const el = document.getElementById('result-bad-match-emoji');
-      if (el) el.innerHTML = `<img src="images/${badType.image}" alt="${badType.name}" style="width:48px;height:48px;border-radius:50%;object-fit:cover;" onerror="this.outerHTML='${badType.emoji}'">`;
+      if (el) el.innerHTML = `<img src="images/${badType.image}" alt="${badType.name}" style="width:64px;height:64px;border-radius:50%;object-fit:cover;" onerror="this.outerHTML='${badType.emoji}'">`;
     }
     setText('result-bad-match-name', t.badMatch);
     setText('result-bad-match-reason', t.badMatchReason);
