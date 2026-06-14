@@ -42,7 +42,10 @@ const App = {
     if (!grid) return;
     grid.innerHTML = MONEY_DATA.types.map(t => `
       <div class="type-chip">
-        <div class="type-chip-emoji">${t.emoji}</div>
+        <div class="type-chip-img-wrap">
+          <img src="images/${t.image}" alt="${t.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span style="display:none">${t.emoji}</span>
+        </div>
         <div class="type-chip-name">${t.name}</div>
       </div>
     `).join('');
