@@ -259,6 +259,24 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   transform: translateY(-2px);
 }
 .type-chip-emoji { font-size: 1.8rem; margin-bottom: 6px; }
+.type-chip-img-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 6px;
+}
+.type-chip-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.type-chip-img-wrap span {
+  font-size: 1.8rem;
+  line-height: 56px;
+  display: block;
+  text-align: center;
+}
 .type-chip-name { font-size: 0.65rem; color: var(--text-mute); line-height: 1.3; }
 
 /* ---- 診断の流れ ---- */
