@@ -274,7 +274,7 @@ const App = {
     setText('result-title', t.resultTitle);
     setText('result-lead', t.resultLead);
 
-    // OGP画像（仮: 絵文字表示）
+    // OGP画像（仮: 絵文字表示）TODO: OGP画像追加後に t.image → t.ogpImage に戻す
     const imgEl = document.getElementById('result-ogp-img');
     if (imgEl) {
       imgEl.src = `images/${t.Image}`;
