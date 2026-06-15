@@ -550,11 +550,15 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   background: radial-gradient(ellipse at center, rgba(108,63,197,0.25) 0%, transparent 70%);
 }
 .result-type-img {
-  width: 260px;
+  width: 100%;
+  max-width: 360px;
   margin: 0 auto 20px;
   position: relative; z-index: 1;
-  animation: float 4s ease-in-out infinite;
-  mix-blend-mode: screen; /* PNG黒背景を消す */
+  /* 枠・背景・丸・アニメすべて除去 */
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0;
 }
 .result-type-img img {
   width: 100%;
