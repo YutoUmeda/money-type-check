@@ -538,7 +538,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
 #page-result { min-height: 100svh; }
 
 .result-hero {
-  background: linear-gradient(180deg, var(--bg3) 0%, var(--bg) 100%);
+  background: transparent;
   padding: 60px 20px 48px;
   text-align: center;
   position: relative;
