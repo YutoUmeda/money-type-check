@@ -88,25 +88,32 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
 
 /* ---- KV ---- */
 .kv {
-  min-height: 100svh;
+  /* flexで縦積み中央寄せ */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 60px 20px 80px;
+  justify-content: flex-start; /* 画像→バッジ→タイトルの順に上から */
+  padding: 0 20px 80px;
   text-align: center;
   position: relative;
-  background-image: 
-    linear-gradient(
-      to bottom,
-      rgba(13,11,26,0.2) 0%,
-      rgba(13,11,26,0.5) 60%,
-      rgba(13,11,26,0.95) 100%
-    ),
-    url('images/kv.png');
-  background-size: 600px 600px;
-  background-position: center top;
-  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* ---- KVメインビジュアル画像 ---- */
+.kv-img-wrap {
+  width: 100%;
+  max-width: 640px;
+  position: relative;
+  margin-bottom: -40px; /* テキストに少し被せる */
+  /* PNG黒背景を消す: mix-blend-mode でスクリーン合成 */
+  mix-blend-mode: screen;
+  /* ふわふわアニメ */
+  animation: float 4s ease-in-out infinite;
+}
+.kv-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .kv-badge {
@@ -118,24 +125,9 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   color: var(--primary-lt);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   backdrop-filter: blur(8px);
-}
-
-.kv-emoji-ring {
-  width: 120px; height: 120px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-dk), var(--primary), var(--accent));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 56px;
-  margin: 0 auto 28px;
-  box-shadow: 0 0 60px rgba(108,63,197,0.5), 0 0 120px rgba(108,63,197,0.2);
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  position: relative; z-index: 1;
 }
 
 .kv-title {
@@ -149,6 +141,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   background-clip: text;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
+  position: relative; z-index: 1;
 }
 
 .kv-subtitle {
@@ -157,6 +150,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   max-width: 320px;
   margin: 0 auto 40px;
   line-height: 1.8;
+  position: relative; z-index: 1;
 }
 
 .kv-cta {
@@ -172,6 +166,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   transition: transform 0.2s, box-shadow 0.2s;
   border: none;
   cursor: pointer;
+  position: relative; z-index: 1;
 }
 .kv-cta:hover {
   transform: translateY(-3px);
@@ -183,28 +178,22 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 6px;
   color: var(--text-dim); font-size: 0.7rem; letter-spacing: 0.15em;
+  z-index: 1;
 }
 .kv-scroll-dot {
   width: 6px; height: 6px; border-radius: 50%;
   background: var(--primary-lt);
   animation: scrollDot 1.5s ease-in-out infinite;
 }
+
+/* ---------- アニメーション ---------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 @keyframes scrollDot {
   0%, 100% { opacity: 1; transform: translateY(0); }
   50% { opacity: 0.3; transform: translateY(4px); }
-}
-
-/* ---- KVメインビジュアル画像 ---- */
-.kv-img-wrap {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 28px;
-  animation: float 4s ease-in-out infinite; /* ふわふわアニメ（kv-emoji-ringと同じ） */
-}
-.kv-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* 画像の縦横比を保って表示 */
 }
 
 /* ---- セクション共通 ---- */
@@ -247,10 +236,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   padding: 20px 16px;
   text-align: center;
 }
-.about-card-icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
+.about-card-icon { font-size: 2rem; margin-bottom: 10px; }
 .about-card-label {
   font-family: var(--font-round);
   font-size: 0.85rem;
@@ -258,11 +244,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   color: var(--text);
   margin-bottom: 4px;
 }
-.about-card-desc {
-  font-size: 0.75rem;
-  color: var(--text-mute);
-  line-height: 1.6;
-}
+.about-card-desc { font-size: 0.75rem; color: var(--text-mute); line-height: 1.6; }
 
 /* ---- 16タイプ紹介 ---- */
 .types-grid {
@@ -286,23 +268,13 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
 }
 .type-chip-emoji { font-size: 1.8rem; margin-bottom: 6px; }
 .type-chip-img-wrap {
-  width: 56px;
-  height: 56px;
+  width: 56px; height: 56px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 6px;
 }
-.type-chip-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.type-chip-img-wrap span {
-  font-size: 1.8rem;
-  line-height: 56px;
-  display: block;
-  text-align: center;
-}
+.type-chip-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.type-chip-img-wrap span { font-size: 1.8rem; line-height: 56px; display: block; text-align: center; }
 .type-chip-name { font-size: 0.65rem; color: var(--text-mute); line-height: 1.3; }
 
 /* ---- 診断の流れ ---- */
@@ -337,18 +309,13 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   position: relative; z-index: 1;
   box-shadow: 0 0 12px rgba(108,63,197,0.4);
 }
-.flow-step-content {}
 .flow-step-title {
   font-family: var(--font-round);
   font-weight: 700;
   font-size: 0.95rem;
   margin-bottom: 4px;
 }
-.flow-step-desc {
-  font-size: 0.82rem;
-  color: var(--text-mute);
-  line-height: 1.6;
-}
+.flow-step-desc { font-size: 0.82rem; color: var(--text-mute); line-height: 1.6; }
 
 /* ---- CTA（下部） ---- */
 .section-cta-wrap {
@@ -364,9 +331,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   display: none;
   flex-direction: column;
 }
-#page-quiz.active {
-  display: flex;
-}
+#page-quiz.active { display: flex; }
 
 .quiz-header {
   padding: 20px 20px 0;
@@ -374,7 +339,6 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   margin: 0 auto;
   width: 100%;
 }
-
 .quiz-progress-info {
   display: flex; justify-content: space-between; align-items: center;
   margin-bottom: 10px;
@@ -398,7 +362,6 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   border-radius: 100px;
   transition: width 0.4s ease;
 }
-
 .quiz-body {
   flex: 1;
   padding: 0 20px;
@@ -406,26 +369,15 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   margin: 0 auto;
   width: 100%;
 }
-
-.quiz-question {
-  display: none;
-  animation: fadeSlideIn 0.35s ease;
-}
-.quiz-question.active {
-  display: block;
-}
+.quiz-question { display: none; animation: fadeSlideIn 0.35s ease; }
+.quiz-question.active { display: block; }
 
 @keyframes fadeSlideIn {
   from { opacity: 0; transform: translateX(24px); }
-  to { opacity: 1; transform: translateX(0); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-.quiz-q-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  color: var(--primary-lt);
-  margin-bottom: 12px;
-}
+.quiz-q-label { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--primary-lt); margin-bottom: 12px; }
 .quiz-q-text {
   font-family: var(--font-round);
   font-size: clamp(1.15rem, 4.5vw, 1.35rem);
@@ -434,13 +386,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   margin-bottom: 28px;
   min-height: 3em;
 }
-
-.quiz-choices {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 28px;
-}
+.quiz-choices { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
 .quiz-choice {
   background: var(--card);
   border: 2px solid var(--border);
@@ -481,7 +427,6 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   border-color: var(--accent);
   color: #fff;
 }
-
 .quiz-footer {
   display: flex;
   gap: 12px;
@@ -502,10 +447,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   font-weight: 700;
   transition: border-color 0.2s, color 0.2s;
 }
-.quiz-btn-back:hover {
-  border-color: var(--text-mute);
-  color: var(--text);
-}
+.quiz-btn-back:hover { border-color: var(--text-mute); color: var(--text); }
 .quiz-btn-next {
   flex: 1;
   background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -519,11 +461,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   transition: opacity 0.2s, transform 0.2s;
 }
 .quiz-btn-next:hover { transform: translateY(-2px); }
-.quiz-btn-next:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  transform: none;
-}
+.quiz-btn-next:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
 
 /* ============================================================
    メール登録ページ
@@ -535,9 +473,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   justify-content: center;
   padding: 40px 20px;
 }
-#page-email.active {
-  display: flex;
-}
+#page-email.active { display: flex; }
 
 .email-card {
   background: var(--card);
@@ -549,23 +485,9 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   text-align: center;
   box-shadow: var(--shadow), var(--glow);
 }
-.email-icon {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-  animation: float 3s ease-in-out infinite;
-}
-.email-title {
-  font-family: var(--font-round);
-  font-size: 1.3rem;
-  font-weight: 900;
-  margin-bottom: 10px;
-}
-.email-desc {
-  font-size: 0.85rem;
-  color: var(--text-mute);
-  line-height: 1.8;
-  margin-bottom: 28px;
-}
+.email-icon { font-size: 3.5rem; margin-bottom: 20px; animation: float 3s ease-in-out infinite; }
+.email-title { font-family: var(--font-round); font-size: 1.3rem; font-weight: 900; margin-bottom: 10px; }
+.email-desc { font-size: 0.85rem; color: var(--text-mute); line-height: 1.8; margin-bottom: 28px; }
 .email-input {
   width: 100%;
   background: var(--bg3);
@@ -581,7 +503,6 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
 }
 .email-input:focus { border-color: var(--primary-lt); }
 .email-input::placeholder { color: var(--text-dim); }
-
 .email-btn-register {
   width: 100%;
   background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -596,7 +517,6 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   transition: transform 0.2s;
 }
 .email-btn-register:hover { transform: translateY(-2px); }
-
 .email-btn-skip {
   width: 100%;
   background: transparent;
@@ -609,23 +529,13 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   font-weight: 700;
   transition: border-color 0.2s, color 0.2s;
 }
-.email-btn-skip:hover {
-  border-color: var(--text-mute);
-  color: var(--text);
-}
-.email-privacy {
-  font-size: 0.72rem;
-  color: var(--text-dim);
-  margin-top: 16px;
-  line-height: 1.6;
-}
+.email-btn-skip:hover { border-color: var(--text-mute); color: var(--text); }
+.email-privacy { font-size: 0.72rem; color: var(--text-dim); margin-top: 16px; line-height: 1.6; }
 
 /* ============================================================
    結果ページ
    ============================================================ */
-#page-result {
-  min-height: 100svh;
-}
+#page-result { min-height: 100svh; }
 
 .result-hero {
   background: linear-gradient(180deg, var(--bg3) 0%, var(--bg) 100%);
@@ -679,11 +589,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
 }
 
 /* ---- 結果コンテンツ ---- */
-.result-content {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 0 20px 80px;
-}
+.result-content { max-width: 640px; margin: 0 auto; padding: 0 20px 80px; }
 
 .result-summary-card {
   background: linear-gradient(135deg, var(--card), var(--card2));
@@ -694,22 +600,10 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   position: relative; z-index: 2;
   box-shadow: var(--shadow);
 }
-.result-summary-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  color: var(--primary-lt);
-  margin-bottom: 8px;
-}
-.result-summary-text {
-  font-family: var(--font-round);
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1.5;
-}
+.result-summary-label { font-size: 0.7rem; letter-spacing: 0.15em; color: var(--primary-lt); margin-bottom: 8px; }
+.result-summary-text { font-family: var(--font-round); font-size: 1.05rem; font-weight: 700; line-height: 1.5; }
 
-.result-section {
-  margin-bottom: 28px;
-}
+.result-section { margin-bottom: 28px; }
 .result-section-title {
   display: flex; align-items: center; gap: 8px;
   font-family: var(--font-round);
@@ -721,12 +615,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   border-bottom: 1px solid var(--border);
 }
 .result-section-icon { font-size: 1rem; }
-
-.result-text {
-  font-size: 0.92rem;
-  color: var(--text-mute);
-  line-height: 1.9;
-}
+.result-text { font-size: 0.92rem; color: var(--text-mute); line-height: 1.9; }
 .result-highlight {
   background: var(--card);
   border: 1px solid var(--border);
@@ -750,10 +639,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
 }
 
 /* 強み・弱みタグ */
-.tag-list {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  margin-bottom: 8px;
-}
+.tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
 .tag {
   background: rgba(108,63,197,0.2);
   border: 1px solid rgba(108,63,197,0.4);
@@ -771,11 +657,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
 }
 
 /* 相性 */
-.compat-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
+.compat-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .compat-card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -785,11 +667,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
 }
 .compat-card.good { border-color: rgba(100,200,100,0.3); }
 .compat-card.bad  { border-color: rgba(255,126,179,0.2); }
-.compat-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  margin-bottom: 6px;
-}
+.compat-label { font-size: 0.65rem; letter-spacing: 0.1em; margin-bottom: 6px; }
 .compat-card.good .compat-label { color: #7fd17f; }
 .compat-card.bad  .compat-label { color: #ff9fc5; }
 .compat-emoji { font-size: 1.8rem; margin-bottom: 4px; }
@@ -797,11 +675,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
 .compat-reason { font-size: 0.72rem; color: var(--text-mute); line-height: 1.5; }
 
 /* ラッキー */
-.lucky-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
+.lucky-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .lucky-item {
   background: var(--card);
   border: 1px solid var(--border);
@@ -809,19 +683,8 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   padding: 14px 10px;
   text-align: center;
 }
-.lucky-item-label {
-  font-size: 0.65rem;
-  color: var(--text-dim);
-  letter-spacing: 0.1em;
-  margin-bottom: 6px;
-}
-.lucky-item-value {
-  font-family: var(--font-round);
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--accent2);
-  line-height: 1.4;
-}
+.lucky-item-label { font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.1em; margin-bottom: 6px; }
+.lucky-item-value { font-family: var(--font-round); font-size: 0.82rem; font-weight: 700; color: var(--accent2); line-height: 1.4; }
 
 /* メッセージ */
 .result-message-card {
@@ -838,19 +701,8 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   content: '✨';
   position: absolute; top: 12px; right: 16px; font-size: 1.2rem; opacity: 0.5;
 }
-.result-message-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  color: var(--primary-lt);
-  margin-bottom: 12px;
-}
-.result-message-text {
-  font-family: var(--font-round);
-  font-size: 1.1rem;
-  font-weight: 700;
-  line-height: 1.7;
-  color: var(--text);
-}
+.result-message-label { font-size: 0.7rem; letter-spacing: 0.15em; color: var(--primary-lt); margin-bottom: 12px; }
+.result-message-text { font-family: var(--font-round); font-size: 1.1rem; font-weight: 700; line-height: 1.7; color: var(--text); }
 
 /* Xシェアボタン */
 .share-btn {
@@ -884,10 +736,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   font-weight: 700;
   transition: border-color 0.2s, color 0.2s;
 }
-.retry-btn:hover {
-  border-color: var(--text-mute);
-  color: var(--text);
-}
+.retry-btn:hover { border-color: var(--text-mute); color: var(--text); }
 
 /* ============================================================
    ローディング
@@ -904,9 +753,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
 }
 #page-loading.active { display: flex; }
 
-.loading-orbs {
-  display: flex; gap: 10px; align-items: center;
-}
+.loading-orbs { display: flex; gap: 10px; align-items: center; }
 .loading-orb {
   width: 12px; height: 12px; border-radius: 50%;
   background: var(--primary-lt);
@@ -914,17 +761,11 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
 }
 .loading-orb:nth-child(2) { animation-delay: 0.2s; background: var(--accent); }
 .loading-orb:nth-child(3) { animation-delay: 0.4s; background: var(--accent2); }
-
 @keyframes orb {
   0%, 80%, 100% { transform: scale(1); opacity: 0.6; }
   40% { transform: scale(1.5); opacity: 1; }
 }
-.loading-text {
-  font-family: var(--font-round);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-mute);
-}
+.loading-text { font-family: var(--font-round); font-size: 1.1rem; font-weight: 700; color: var(--text-mute); }
 
 /* ============================================================
    ユーティリティ / Toast
@@ -952,12 +793,12 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
    ============================================================ */
 @media (min-width: 480px) {
   .about-cards { grid-template-columns: repeat(2, 1fr); }
-  .types-grid { grid-template-columns: repeat(4, 1fr); }
+  .types-grid  { grid-template-columns: repeat(4, 1fr); }
 }
-
 @media (min-width: 640px) {
-  .types-grid { gap: 12px; }
-  .type-chip { padding: 18px 10px; }
+  .types-grid  { gap: 12px; }
+  .type-chip   { padding: 18px 10px; }
   .type-chip-emoji { font-size: 2.2rem; }
-  .type-chip-name { font-size: 0.72rem; }
+  .type-chip-name  { font-size: 0.72rem; }
+  .kv-img-wrap { max-width: 560px; } /* PC表示では少し小さく */
 }

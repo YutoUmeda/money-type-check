@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>マネータイプ診断 | あなたのお金タイプを16タイプで診断</title>
-
-  <!-- OGP（デフォルト） -->
   <meta property="og:title" content="マネータイプ診断 | あなたのお金タイプは？">
   <meta property="og:description" content="10問の質問に答えて、あなたのマネータイプを16キャラクターから診断！">
   <meta property="og:type" content="website">
@@ -14,13 +12,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="マネータイプ診断">
   <meta name="twitter:description" content="あなたのマネータイプを16キャラクターで診断！">
-
-  <!-- スタイル -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- 星空背景 -->
 <div class="stars-bg" aria-hidden="true"></div>
 
 <!-- ============================================================
@@ -30,6 +25,12 @@
 
   <!-- KV -->
   <section class="kv" aria-label="キービジュアル">
+
+    <!-- KV画像（上部に大きく） -->
+    <div class="kv-img-wrap" aria-hidden="true">
+      <img src="images/kv.png" alt="">
+    </div>
+
     <div class="kv-badge">✨ 16タイプ診断</div>
 
     <h1 class="kv-title">
@@ -61,7 +62,6 @@
       4つの軸であなたのマネースタイルを分析し、
       16のキャラクタータイプで診断します。
     </p>
-
     <div class="about-cards">
       <div class="about-card">
         <div class="about-card-icon">⏱</div>
@@ -101,7 +101,6 @@
   <section class="section" aria-label="診断の流れ">
     <p class="section-label">HOW IT WORKS</p>
     <h2 class="section-title">診断の流れ</h2>
-
     <div class="flow-steps">
       <div class="flow-step">
         <div class="flow-step-num">1</div>
@@ -141,14 +140,12 @@
     </button>
   </div>
 
-</main><!-- /page-top -->
-
+</main>
 
 <!-- ============================================================
      診断ページ
      ============================================================ -->
 <div id="page-quiz" class="page" role="main" aria-label="診断">
-
   <header class="quiz-header">
     <div class="quiz-progress-info">
       <span id="progress-label" class="quiz-progress-label">1 / 10</span>
@@ -158,18 +155,12 @@
       <div class="quiz-progress-fill" id="progress-fill" style="width:10%"></div>
     </div>
   </header>
-
-  <div class="quiz-body" id="quiz-container">
-    <!-- JS で描画 -->
-  </div>
-
+  <div class="quiz-body" id="quiz-container"></div>
   <footer class="quiz-footer">
     <button class="quiz-btn-back" id="btn-back">← TOPへ</button>
     <button class="quiz-btn-next" id="btn-next" disabled>次へ →</button>
   </footer>
-
-</div><!-- /page-quiz -->
-
+</div>
 
 <!-- ============================================================
      ローディングページ
@@ -183,8 +174,7 @@
   <div class="loading-text">
     あなたのマネータイプを<br>分析しています…
   </div>
-</div><!-- /page-loading -->
-
+</div>
 
 <!-- ============================================================
      メール登録ページ
@@ -198,36 +188,18 @@
       お金に関するお役立ち情報を<br>
       お届けします（無料・任意）
     </p>
-    <input
-      type="email"
-      id="input-email"
-      class="email-input"
-      placeholder="your@email.com"
-      autocomplete="email"
-      aria-label="メールアドレス"
-    >
-    <button class="email-btn-register" id="btn-email-register">
-      登録して結果を見る ✨
-    </button>
-    <button class="email-btn-skip" id="btn-email-skip">
-      登録せずに結果を見る
-    </button>
-    <p class="email-privacy">
-      ※ 個人情報は厳重に管理します。<br>
-      いつでも配信停止できます。
-    </p>
+    <input type="email" id="input-email" class="email-input" placeholder="your@email.com" autocomplete="email" aria-label="メールアドレス">
+    <button class="email-btn-register" id="btn-email-register">登録して結果を見る ✨</button>
+    <button class="email-btn-skip" id="btn-email-skip">登録せずに結果を見る</button>
+    <p class="email-privacy">※ 個人情報は厳重に管理します。<br>いつでも配信停止できます。</p>
   </div>
-</div><!-- /page-email -->
-
+</div>
 
 <!-- ============================================================
      結果ページ
      ============================================================ -->
 <div id="page-result" class="page" role="main" aria-label="診断結果">
-
-  <!-- ヒーローセクション -->
   <div class="result-hero" id="result-hero">
-    <!-- OGP画像 / 絵文字フォールバック -->
     <div class="result-type-img">
       <img id="result-ogp-img" src="" alt="タイプ画像" style="display:none; width:100%; height:100%; object-fit:cover; border-radius:50%;">
       <div id="result-type-emoji-fallback" style="display:none; align-items:center; justify-content:center; font-size:72px;">
@@ -239,36 +211,21 @@
     <p class="result-lead" id="result-lead"></p>
   </div>
 
-  <!-- 結果コンテンツ -->
   <div class="result-content">
-
-    <!-- 一言要約カード -->
     <div class="result-summary-card">
       <div class="result-summary-label">💡 一言で言うと</div>
       <div class="result-summary-text" id="result-summary"></div>
     </div>
-
-    <!-- 総合説明 -->
     <div class="result-section">
-      <h2 class="result-section-title">
-        <span class="result-section-icon">🌟</span>総合説明
-      </h2>
+      <h2 class="result-section-title"><span class="result-section-icon">🌟</span>総合説明</h2>
       <p class="result-text" id="result-desc"></p>
     </div>
-
-    <!-- こんなあなたへ -->
     <div class="result-section">
-      <h2 class="result-section-title">
-        <span class="result-section-icon">💌</span>こんなあなたへ
-      </h2>
+      <h2 class="result-section-title"><span class="result-section-icon">💌</span>こんなあなたへ</h2>
       <div class="result-highlight" id="result-foryou"></div>
     </div>
-
-    <!-- 強み・弱み -->
     <div class="result-section">
-      <h2 class="result-section-title">
-        <span class="result-section-icon">⚡</span>強みと弱み
-      </h2>
+      <h2 class="result-section-title"><span class="result-section-icon">⚡</span>強みと弱み</h2>
       <div style="margin-bottom:10px;">
         <div style="font-size:0.78rem;color:var(--text-dim);margin-bottom:8px;">✅ 強み</div>
         <div class="tag-list" id="result-strengths"></div>
@@ -278,52 +235,28 @@
         <div class="tag-list" id="result-weaknesses"></div>
       </div>
     </div>
-
-    <!-- お金との付き合い方 -->
     <div class="result-section">
-      <h2 class="result-section-title">
-        <span class="result-section-icon">💰</span>お金との付き合い方
-      </h2>
+      <h2 class="result-section-title"><span class="result-section-icon">💰</span>お金との付き合い方</h2>
       <p class="result-text" id="result-money"></p>
     </div>
-
-    <!-- 仕事スタイル -->
     <div class="result-section">
-      <h2 class="result-section-title">
-        <span class="result-section-icon">💼</span>仕事スタイル
-      </h2>
+      <h2 class="result-section-title"><span class="result-section-icon">💼</span>仕事スタイル</h2>
       <p class="result-text" id="result-work"></p>
     </div>
-
-    <!-- 恋愛スタイル -->
     <div class="result-section">
-      <h2 class="result-section-title">
-        <span class="result-section-icon">💕</span>恋愛スタイル
-      </h2>
+      <h2 class="result-section-title"><span class="result-section-icon">💕</span>恋愛スタイル</h2>
       <p class="result-text" id="result-love"></p>
     </div>
-
-    <!-- 成長のヒント -->
     <div class="result-section">
-      <h2 class="result-section-title">
-        <span class="result-section-icon">🌱</span>成長のヒント
-      </h2>
+      <h2 class="result-section-title"><span class="result-section-icon">🌱</span>成長のヒント</h2>
       <p class="result-text" id="result-growth"></p>
     </div>
-
-    <!-- ストレス時の傾向 -->
     <div class="result-section">
-      <h2 class="result-section-title">
-        <span class="result-section-icon">😓</span>ストレス時の傾向
-      </h2>
+      <h2 class="result-section-title"><span class="result-section-icon">😓</span>ストレス時の傾向</h2>
       <p class="result-text" id="result-stress"></p>
     </div>
-
-    <!-- お金で成功・失敗 -->
     <div class="result-section">
-      <h2 class="result-section-title">
-        <span class="result-section-icon">📊</span>お金の成功・失敗パターン
-      </h2>
+      <h2 class="result-section-title"><span class="result-section-icon">📊</span>お金の成功・失敗パターン</h2>
       <div style="margin-bottom:12px;">
         <div style="font-size:0.78rem;color:var(--text-dim);margin-bottom:6px;">✅ 成功しやすい理由</div>
         <p class="result-text" id="result-success-reason"></p>
@@ -337,12 +270,8 @@
         <p class="result-text" id="result-failures"></p>
       </div>
     </div>
-
-    <!-- 相性 -->
     <div class="result-section">
-      <h2 class="result-section-title">
-        <span class="result-section-icon">🤝</span>相性のいいタイプ・悪いタイプ
-      </h2>
+      <h2 class="result-section-title"><span class="result-section-icon">🤝</span>相性のいいタイプ・悪いタイプ</h2>
       <div class="compat-cards">
         <div class="compat-card good">
           <div class="compat-label">💚 相性◎</div>
@@ -358,18 +287,12 @@
         </div>
       </div>
     </div>
-
-    <!-- あなたへのメッセージ -->
     <div class="result-message-card">
       <div class="result-message-label">✨ あなたへのメッセージ</div>
       <p class="result-message-text" id="result-message"></p>
     </div>
-
-    <!-- ラッキー -->
     <div class="result-section">
-      <h2 class="result-section-title">
-        <span class="result-section-icon">🍀</span>ラッキー3選
-      </h2>
+      <h2 class="result-section-title"><span class="result-section-icon">🍀</span>ラッキー3選</h2>
       <div class="lucky-row">
         <div class="lucky-item">
           <div class="lucky-item-label">ACTION</div>
@@ -385,29 +308,20 @@
         </div>
       </div>
     </div>
-
-    <!-- Xシェアボタン -->
     <div style="margin-bottom:40px;">
       <button class="share-btn" id="btn-share-x" aria-label="Xでシェア">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.23H2.747l7.73-8.835L1.254 2.25H8.08l4.258 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
         Xでシェアする
       </button>
-      <button class="retry-btn" id="btn-retry">
-        もう一度診断する
-      </button>
+      <button class="retry-btn" id="btn-retry">もう一度診断する</button>
     </div>
+  </div>
+</div>
 
-  </div><!-- /result-content -->
-</div><!-- /page-result -->
-
-
-<!-- Toast通知 -->
 <div class="toast" id="toast" role="alert" aria-live="polite"></div>
 
-<!-- スクリプト -->
 <script src="data.js"></script>
 <script src="engine.js"></script>
 <script src="app.js"></script>
-
 </body>
 </html>
