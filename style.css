@@ -509,7 +509,8 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
 .compat-label { font-size: 0.65rem; letter-spacing: 0.1em; margin-bottom: 6px; }
 .compat-card.good .compat-label { color: #7fd17f; }
 .compat-card.bad  .compat-label { color: #ff9fc5; }
-.compat-emoji { font-size: 1.8rem; margin-bottom: 4px; }
+.compat-emoji { font-size: 1.8rem; margin-bottom: 4px; display: flex; justify-content: center; align-items: center; }
+.compat-emoji img { margin: 0 auto; }
 .compat-name { font-family: var(--font-round); font-size: 0.82rem; font-weight: 700; margin-bottom: 4px; }
 .compat-reason { font-size: 0.72rem; color: var(--text-mute); line-height: 1.5; }
 
