@@ -277,7 +277,7 @@ const App = {
     // OGP画像（仮: 絵文字表示）TODO: OGP画像追加後に t.image → t.ogpImage に戻す
     const imgEl = document.getElementById('result-ogp-img');
     if (imgEl) {
-      imgEl.src = `images/${t.image}`;
+      imgEl.src = `images/${t.ogpImage}`;
       imgEl.style.display = 'block';
       imgEl.onerror = () => {
         imgEl.style.display = 'none';
@@ -352,7 +352,7 @@ const App = {
     this.state.xShared = true;
     const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent(
-      `${t.snsText}\n「${t.catchcopy}」\n\n${t.message}\n\n#マネータイプ診断 #${t.name}`
+      `${t.snsText}\n「${t.catchcopy}」\n\n${t.message}\n\n#マネーアニマル診断 #${t.name}`
     );
     window.open(`https://x.com/intent/tweet?text=${text}&url=${url}`, '_blank');
   },
