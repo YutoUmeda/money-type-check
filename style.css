@@ -181,6 +181,19 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   50% { opacity: 0.3; transform: translateY(4px); }
 }
 
+/* ---- KVメインビジュアル画像 ---- */
+.kv-img-wrap {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 28px;
+  animation: float 4s ease-in-out infinite; /* ふわふわアニメ（kv-emoji-ringと同じ） */
+}
+.kv-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 画像の縦横比を保って表示 */
+}
+
 /* ---- セクション共通 ---- */
 .section {
   padding: 72px 20px;
