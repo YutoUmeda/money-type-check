@@ -509,8 +509,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
 .compat-label { font-size: 0.65rem; letter-spacing: 0.1em; margin-bottom: 6px; }
 .compat-card.good .compat-label { color: #7fd17f; }
 .compat-card.bad  .compat-label { color: #ff9fc5; }
-.compat-emoji { font-size: 1.8rem; margin-bottom: 4px; display: flex; justify-content: center; align-items: center; }
-.compat-emoji img { margin: 0 auto; }
+.compat-emoji { font-size: 1.8rem; margin-bottom: 4px; }
 .compat-name { font-family: var(--font-round); font-size: 0.82rem; font-weight: 700; margin-bottom: 4px; }
 .compat-reason { font-size: 0.72rem; color: var(--text-mute); line-height: 1.5; }
 
@@ -602,4 +601,145 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   .type-chip-name  { font-size: 0.72rem; }
   .kv-img-wrap     { max-width: 560px; }
   .result-type-img { max-width: 360px; }
+}
+
+/* ============================================================
+   ① プロフィール入力フォーム
+   ============================================================ */
+.profile-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 32px;
+  position: relative; z-index: 1;
+}
+.profile-form-inner {
+  background: rgba(30,26,56,0.75);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px 20px;
+  backdrop-filter: blur(12px);
+}
+.profile-form-title {
+  font-family: var(--font-round);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-mute);
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+.profile-field {
+  margin-bottom: 16px;
+}
+.profile-field:last-child { margin-bottom: 0; }
+
+.profile-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-family: var(--font-round);
+  font-weight: 700;
+  color: var(--text-mute);
+  margin-bottom: 6px;
+}
+.profile-required {
+  font-size: 0.65rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-weight: 700;
+}
+.profile-optional {
+  font-size: 0.65rem;
+  background: rgba(108,63,197,0.3);
+  color: var(--primary-lt);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-weight: 700;
+}
+.profile-input,
+.profile-select {
+  width: 100%;
+  background: rgba(13,11,26,0.6);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 12px 14px;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.profile-input:focus,
+.profile-select:focus {
+  border-color: var(--primary-lt);
+}
+.profile-input::placeholder { color: var(--text-dim); }
+.profile-select {
+  /* セレクト矢印 */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239b96cc' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+.profile-select option {
+  background: #1c1836;
+  color: var(--text);
+}
+
+/* ============================================================
+   ③ 広告枠
+   ============================================================ */
+.affiliate-wrap {
+  background: rgba(30,26,56,0.5);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.affiliate-wrap:hover {
+  border-color: var(--primary-lt);
+}
+.affiliate-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--primary-lt);
+  margin-bottom: 14px;
+  font-family: var(--font-round);
+  font-weight: 700;
+}
+.affiliate-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 楽天テーブルのスタイル上書き */
+.affiliate-banner table {
+  border-radius: var(--r-sm) !important;
+  overflow: hidden;
+  border-color: var(--border) !important;
+  width: 100% !important;
+  max-width: 300px;
+}
+.affiliate-banner table td {
+  background: rgba(13,11,26,0.8) !important;
+  color: var(--text-mute) !important;
+}
+.affiliate-banner table a {
+  color: var(--primary-lt) !important;
+  font-size: 0.8rem !important;
+}
+/* DMM株バナー */
+.affiliate-banner img[width="234"] {
+  border-radius: var(--r-sm);
+  max-width: 100%;
+  height: auto;
 }

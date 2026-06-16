@@ -18,33 +18,55 @@
 
 <div class="stars-bg" aria-hidden="true"></div>
 
-<!-- ============================================================
-     TOPページ
-     ============================================================ -->
+<!-- TOPページ -->
 <main id="page-top" class="page active" role="main">
 
-  <!-- KV -->
   <section class="kv" aria-label="キービジュアル">
-
-    <!-- KV画像（上部に大きく） -->
     <div class="kv-img-wrap" aria-hidden="true">
       <img src="images/kv.png" alt="">
     </div>
-
     <div class="kv-badge">✨ 16タイプ診断</div>
+    <h1 class="kv-title">マネータイプ<br>診断</h1>
+    <p class="kv-subtitle">10問の質問に答えて、<br>あなたのお金タイプを発見しよう</p>
 
-    <h1 class="kv-title">
-      マネータイプ<br>診断
-    </h1>
+    <!-- ① プロフィール入力フォーム -->
+    <div class="profile-form">
+      <div class="profile-form-inner">
+        <p class="profile-form-title">まず簡単なプロフィールを教えてください</p>
 
-    <p class="kv-subtitle">
-      10問の質問に答えて、<br>
-      あなたのお金タイプを発見しよう
-    </p>
+        <div class="profile-field">
+          <label class="profile-label" for="profile-nickname">ニックネーム <span class="profile-optional">任意</span></label>
+          <input type="text" id="profile-nickname" class="profile-input" placeholder="例：たろう" maxlength="20" autocomplete="off">
+        </div>
+
+        <div class="profile-field">
+          <label class="profile-label" for="profile-age">年代 <span class="profile-required">必須</span></label>
+          <select id="profile-age" class="profile-select">
+            <option value="">選択してください</option>
+            <option value="10代以下">10代以下</option>
+            <option value="20代">20代</option>
+            <option value="30代">30代</option>
+            <option value="40代">40代</option>
+            <option value="50代">50代</option>
+            <option value="60代以上">60代以上</option>
+          </select>
+        </div>
+
+        <div class="profile-field">
+          <label class="profile-label" for="profile-gender">性別 <span class="profile-optional">任意</span></label>
+          <select id="profile-gender" class="profile-select">
+            <option value="">選択してください</option>
+            <option value="男性">男性</option>
+            <option value="女性">女性</option>
+            <option value="その他">その他</option>
+            <option value="回答しない">回答しない</option>
+          </select>
+        </div>
+      </div>
+    </div>
 
     <button class="kv-cta js-start-quiz" aria-label="診断を始める">
-      無料で診断する
-      <span aria-hidden="true">→</span>
+      無料で診断する <span aria-hidden="true">→</span>
     </button>
 
     <div class="kv-scroll" aria-hidden="true">
@@ -53,98 +75,43 @@
     </div>
   </section>
 
-  <!-- 診断説明 -->
   <section class="section" aria-label="診断について">
     <p class="section-label">ABOUT</p>
     <h2 class="section-title">あなたのお金タイプ、<br>分かってる？</h2>
-    <p class="section-desc">
-      貯める派？増やす派？直感派？計画派？<br>
-      4つの軸であなたのマネースタイルを分析し、
-      16のキャラクタータイプで診断します。
-    </p>
+    <p class="section-desc">貯める派？増やす派？直感派？計画派？<br>4つの軸であなたのマネースタイルを分析し、16のキャラクタータイプで診断します。</p>
     <div class="about-cards">
-      <div class="about-card">
-        <div class="about-card-icon">⏱</div>
-        <div class="about-card-label">約30秒</div>
-        <div class="about-card-desc">10問の簡単な質問に答えるだけ</div>
-      </div>
-      <div class="about-card">
-        <div class="about-card-icon">🔬</div>
-        <div class="about-card-label">4軸分析</div>
-        <div class="about-card-desc">守る/増やす・論理/直感など</div>
-      </div>
-      <div class="about-card">
-        <div class="about-card-icon">🦁</div>
-        <div class="about-card-label">16タイプ</div>
-        <div class="about-card-desc">ユニークな動物キャラで判定</div>
-      </div>
-      <div class="about-card">
-        <div class="about-card-icon">💬</div>
-        <div class="about-card-label">Xでシェア</div>
-        <div class="about-card-desc">友だちと比べて盛り上がろう</div>
-      </div>
+      <div class="about-card"><div class="about-card-icon">⏱</div><div class="about-card-label">約3分</div><div class="about-card-desc">10問の簡単な質問に答えるだけ</div></div>
+      <div class="about-card"><div class="about-card-icon">🔬</div><div class="about-card-label">4軸分析</div><div class="about-card-desc">守る/増やす・論理/直感など</div></div>
+      <div class="about-card"><div class="about-card-icon">🦁</div><div class="about-card-label">16タイプ</div><div class="about-card-desc">ユニークな動物キャラで判定</div></div>
+      <div class="about-card"><div class="about-card-icon">💬</div><div class="about-card-label">Xでシェア</div><div class="about-card-desc">友だちと比べて盛り上がろう</div></div>
     </div>
   </section>
 
-  <!-- 16タイプ紹介 -->
   <section class="section" aria-label="16タイプ一覧">
     <p class="section-label">16 TYPES</p>
     <h2 class="section-title">あなたはどのタイプ？</h2>
-    <p class="section-desc">
-      資産防衛タートルから革命ユニコーンまで、<br>
-      全16タイプのどれがあなたに当てはまる？
-    </p>
+    <p class="section-desc">資産防衛タートルから革命ユニコーンまで、<br>全16タイプのどれがあなたに当てはまる？</p>
     <div class="types-grid" id="types-grid" role="list"></div>
   </section>
 
-  <!-- 診断の流れ -->
   <section class="section" aria-label="診断の流れ">
     <p class="section-label">HOW IT WORKS</p>
     <h2 class="section-title">診断の流れ</h2>
     <div class="flow-steps">
-      <div class="flow-step">
-        <div class="flow-step-num">1</div>
-        <div class="flow-step-content">
-          <div class="flow-step-title">10問に答える</div>
-          <div class="flow-step-desc">お金・仕事・ライフスタイルに関する質問に4択で回答</div>
-        </div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-step-num">2</div>
-        <div class="flow-step-content">
-          <div class="flow-step-title">4軸で採点</div>
-          <div class="flow-step-desc">守る/増やす・論理/直感・計画/挑戦・安心/自由の4軸を集計</div>
-        </div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-step-num">3</div>
-        <div class="flow-step-content">
-          <div class="flow-step-title">16タイプを判定</div>
-          <div class="flow-step-desc">あなただけのマネータイプキャラクターが決定！</div>
-        </div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-step-num">4</div>
-        <div class="flow-step-content">
-          <div class="flow-step-title">詳細な結果を確認</div>
-          <div class="flow-step-desc">強み・弱み・相性・ラッキーアイテムまで丸わかり</div>
-        </div>
-      </div>
+      <div class="flow-step"><div class="flow-step-num">1</div><div class="flow-step-content"><div class="flow-step-title">10問に答える</div><div class="flow-step-desc">お金・仕事・ライフスタイルに関する質問に4択で回答</div></div></div>
+      <div class="flow-step"><div class="flow-step-num">2</div><div class="flow-step-content"><div class="flow-step-title">4軸で採点</div><div class="flow-step-desc">守る/増やす・論理/直感・計画/挑戦・安心/自由の4軸を集計</div></div></div>
+      <div class="flow-step"><div class="flow-step-num">3</div><div class="flow-step-content"><div class="flow-step-title">16タイプを判定</div><div class="flow-step-desc">あなただけのマネータイプキャラクターが決定！</div></div></div>
+      <div class="flow-step"><div class="flow-step-num">4</div><div class="flow-step-content"><div class="flow-step-title">詳細な結果を確認</div><div class="flow-step-desc">強み・弱み・相性・ラッキーアイテムまで丸わかり</div></div></div>
     </div>
   </section>
 
-  <!-- 最下部CTA -->
   <div class="section-cta-wrap">
-    <button class="kv-cta js-start-quiz" aria-label="診断を始める">
-      さっそく診断する ✨
-    </button>
+    <button class="kv-cta js-start-quiz" aria-label="診断を始める">さっそく診断する ✨</button>
   </div>
 
 </main>
 
-<!-- ============================================================
-     診断ページ
-     ============================================================ -->
+<!-- 診断ページ -->
 <div id="page-quiz" class="page" role="main" aria-label="診断">
   <header class="quiz-header">
     <div class="quiz-progress-info">
@@ -162,32 +129,20 @@
   </footer>
 </div>
 
-<!-- ============================================================
-     ローディングページ
-     ============================================================ -->
+<!-- ローディング -->
 <div id="page-loading" class="page" role="status" aria-label="診断中">
   <div class="loading-orbs" aria-hidden="true">
-    <div class="loading-orb"></div>
-    <div class="loading-orb"></div>
-    <div class="loading-orb"></div>
+    <div class="loading-orb"></div><div class="loading-orb"></div><div class="loading-orb"></div>
   </div>
-  <div class="loading-text">
-    あなたのマネータイプを<br>分析しています…
-  </div>
+  <div class="loading-text">あなたのマネータイプを<br>分析しています…</div>
 </div>
 
-<!-- ============================================================
-     メール登録ページ
-     ============================================================ -->
+<!-- メール登録 -->
 <div id="page-email" class="page" role="main" aria-label="メール登録">
   <div class="email-card">
     <div class="email-icon" aria-hidden="true">🎁</div>
     <h2 class="email-title">結果を受け取りますか？</h2>
-    <p class="email-desc">
-      メールアドレスを登録すると、<br>
-      お金に関するお役立ち情報を<br>
-      お届けします（無料・任意）
-    </p>
+    <p class="email-desc">メールアドレスを登録すると、<br>お金に関するお役立ち情報を<br>お届けします（無料・任意）</p>
     <input type="email" id="input-email" class="email-input" placeholder="your@email.com" autocomplete="email" aria-label="メールアドレス">
     <button class="email-btn-register" id="btn-email-register">登録して結果を見る ✨</button>
     <button class="email-btn-skip" id="btn-email-skip">登録せずに結果を見る</button>
@@ -195,9 +150,7 @@
   </div>
 </div>
 
-<!-- ============================================================
-     結果ページ
-     ============================================================ -->
+<!-- 結果ページ -->
 <div id="page-result" class="page" role="main" aria-label="診断結果">
   <div class="result-hero" id="result-hero">
     <div class="result-type-img">
@@ -287,6 +240,10 @@
         </div>
       </div>
     </div>
+
+    <!-- ③ 広告枠（相性セクションの下・Xシェアボタンの上） -->
+    <div id="affiliate-area" class="result-section"></div>
+
     <div class="result-message-card">
       <div class="result-message-label">✨ あなたへのメッセージ</div>
       <p class="result-message-text" id="result-message"></p>
@@ -294,18 +251,9 @@
     <div class="result-section">
       <h2 class="result-section-title"><span class="result-section-icon">🍀</span>ラッキー3選</h2>
       <div class="lucky-row">
-        <div class="lucky-item">
-          <div class="lucky-item-label">ACTION</div>
-          <div class="lucky-item-value" id="result-lucky-action"></div>
-        </div>
-        <div class="lucky-item">
-          <div class="lucky-item-label">COLOR</div>
-          <div class="lucky-item-value" id="result-lucky-color"></div>
-        </div>
-        <div class="lucky-item">
-          <div class="lucky-item-label">ITEM</div>
-          <div class="lucky-item-value" id="result-lucky-item"></div>
-        </div>
+        <div class="lucky-item"><div class="lucky-item-label">ACTION</div><div class="lucky-item-value" id="result-lucky-action"></div></div>
+        <div class="lucky-item"><div class="lucky-item-label">COLOR</div><div class="lucky-item-value" id="result-lucky-color"></div></div>
+        <div class="lucky-item"><div class="lucky-item-label">ITEM</div><div class="lucky-item-value" id="result-lucky-item"></div></div>
       </div>
     </div>
     <div style="margin-bottom:40px;">
