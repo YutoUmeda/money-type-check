@@ -704,6 +704,8 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   backdrop-filter: blur(4px);
   cursor: pointer;
   transition: border-color 0.2s;
+  mix-blend-mode: normal; /* 追加：親のscreenを遮断 */
+  isolation: isolate;     /* 追加：スタッキングコンテキストを分離 */
 }
 .affiliate-wrap:hover {
   border-color: var(--primary-lt);
