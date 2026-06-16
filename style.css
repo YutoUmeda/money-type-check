@@ -696,7 +696,9 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
    ③ 広告枠
    ============================================================ */
 .affiliate-wrap {
-  background: rgba(30,26,56,0.5);
+   background: #1e1a38;
+   isolation: isolate;
+   mix-blend-mode: normal;
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   padding: 20px;
