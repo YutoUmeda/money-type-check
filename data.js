@@ -465,28 +465,29 @@ const MONEY_DATA = {
       label: "家計改善・節約",
       // バナー形式：楽天アフィリエイト（テーブル型HTMLをそのまま埋め込む）
       type: "rakuten",
-      html: `<table cellpadding="0" cellspacing="0" border="0" style="border:1px solid #ccc;width:300px;border-radius:12px;overflow:hidden;"><tbody><tr style="border-style:none;"><td style="vertical-align:top;border-style:none;padding:10px;width:44px;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4B5MC4+G3W7ZM+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00thoo4.2bo11564.g00thoo4.2bo12023%2Fa26060220692_4B5MC4_G3W7ZM_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fkomatirain%252F1000000222%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fkomatirain%252Fi%252F10000041%252F%26rafcid%3Dwsc_i_is_a9f492a7-8ef9-40e2-ab89-4bc43a1ee283" rel="nofollow"><img style="max-width:initial;" border="0" alt="" src="https://thumbnail.image.rakuten.co.jp/@0_mall/komatirain/cabinet/12121955/imgrc0105917338.jpg?_ex=64x64"></a></td><td style="font-size:12px;vertical-align:middle;border-style:none;padding:10px;"><p style="padding:0;margin:0;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4B5MC4+G3W7ZM+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00thoo4.2bo11564.g00thoo4.2bo12023%2Fa26060220692_4B5MC4_G3W7ZM_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fkomatirain%252F1000000222%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fkomatirain%252Fi%252F10000041%252F%26rafcid%3Dwsc_i_is_a9f492a7-8ef9-40e2-ab89-4bc43a1ee283" rel="nofollow">【お助け米20kg】令和7年産 あきたこまち 家計お助け米 農家直送便</a></p><p style="color:#666;margin-top:5px;line-height:1.5;">価格：<span style="font-size:14px;color:#C00;font-weight:bold;">12,540円</span></p></td></tr></tbody></table><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4B5MC4+G3W7ZM+2HOM+BWGDT" alt="">`,
+      html: `<table cellpadding="0" cellspacing="0" border="0" style=" border:1px solid #ccc; width:300px;"><tbody><tr style="border-style:none;"><td style="vertical-align:top; border-style:none; padding:10px; width:108px;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4B5MC4+G3W7ZM+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00thoo4.2bo11564.g00thoo4.2bo12023%2Fa26060220692_4B5MC4_G3W7ZM_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fkomatirain%252F1000000222%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fkomatirain%252Fi%252F10000041%252F%26rafcid%3Dwsc_i_is_a9f492a7-8ef9-40e2-ab89-4bc43a1ee283" rel="nofollow"><img style="max-width: initial;" border="0" alt="" src="https://thumbnail.image.rakuten.co.jp/@0_mall/komatirain/cabinet/12121955/imgrc0105917338.jpg?_ex=128x128"></a></td><td style="font-size:12px; vertical-align:middle; border-style:none; padding:10px;"><p style="padding:0; margin:0;"><a href="https://rpx.a8.net/svt/ejp?a8mat=4B5MC4+G3W7ZM+2HOM+BWGDT&rakuten=y&a8ejpredirect=https%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2Fg00thoo4.2bo11564.g00thoo4.2bo12023%2Fa26060220692_4B5MC4_G3W7ZM_2HOM_BWGDT%3Fpc%3Dhttps%253A%252F%252Fitem.rakuten.co.jp%252Fkomatirain%252F1000000222%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252Fkomatirain%252Fi%252F10000041%252F%26rafcid%3Dwsc_i_is_a9f492a7-8ef9-40e2-ab89-4bc43a1ee283" rel="nofollow">【お助け米20kg】令和7年産 あきたこまち 家計お助け米 農家直送便 20kg（5kg&times;4袋） 米びつ当番【天鷹唐辛子】プレゼント付き</a></p><p style="color:#666; margin-top:5px; line-height:1.5;">価格:<span style="font-size:14px; color:#C00; font-weight:bold;">12540円</span><br><span style="font-size:10px; font-weight:normal;">(2026/6/16 18:57時点)</span><br><span style="font-weight:bold;">感想(610件)</span></p></td></tr></tbody></table>
+<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4B5MC4+G3W7ZM+2HOM+BWGDT" alt="">`,
       trackingName: "rakuten_kome_20kg",
     },
     B: {
       id: "B",
       label: "投資・資産形成",
       type: "banner",
-      html: `<a href="https://px.a8.net/svt/ejp?a8mat=4B5WGA+4A7AGI+1WP2+15PMN5" rel="nofollow"><img border="0" width="234" height="60" alt="DMM株" src="https://www29.a8.net/svt/bgt?aid=260615818259&wid=001&eno=01&mid=s00000008903007006000&mc=1"></a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B5WGA+4A7AGI+1WP2+15PMN5" alt="">`,
+      html: `<a href="https://px.a8.net/svt/ejp?a8mat=4B5WGA+4A7AGI+1WP2+15P77L" rel="nofollow"><img border="0" width="300" height="250" alt="" src="https://www27.a8.net/svt/bgt?aid=260615818259&wid=001&eno=01&mid=s00000008903007004000&mc=1"></a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B5WGA+4A7AGI+1WP2+15P77L" alt="">`,
       trackingName: "dmm_kabushiki",
     },
     C: {
       id: "C",
       label: "キャリア・副業",
       type: "banner",
-      html: `<a href="https://px.a8.net/svt/ejp?a8mat=4B5WGA+4A7AGI+1WP2+15PMN5" rel="nofollow"><img border="0" width="234" height="60" alt="DMM株" src="https://www29.a8.net/svt/bgt?aid=260615818259&wid=001&eno=01&mid=s00000008903007006000&mc=1"></a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B5WGA+4A7AGI+1WP2+15PMN5" alt="">`,
+      html: `<a href="https://px.a8.net/svt/ejp?a8mat=4B5WGA+4A7AGI+1WP2+15P77L" rel="nofollow"><img border="0" width="300" height="250" alt="" src="https://www27.a8.net/svt/bgt?aid=260615818259&wid=001&eno=01&mid=s00000008903007004000&mc=1"></a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B5WGA+4A7AGI+1WP2+15P77L" alt="">`,
       trackingName: "dmm_kabushiki",
     },
     D: {
       id: "D",
       label: "自由・クリエイティブ",
       type: "banner",
-      html: `<a href="https://px.a8.net/svt/ejp?a8mat=4B5WGA+4A7AGI+1WP2+15PMN5" rel="nofollow"><img border="0" width="234" height="60" alt="DMM株" src="https://www29.a8.net/svt/bgt?aid=260615818259&wid=001&eno=01&mid=s00000008903007006000&mc=1"></a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B5WGA+4A7AGI+1WP2+15PMN5" alt="">`,
+      html: `<a href="https://px.a8.net/svt/ejp?a8mat=4B5WGA+4A7AGI+1WP2+15P77L" rel="nofollow"><img border="0" width="300" height="250" alt="" src="https://www27.a8.net/svt/bgt?aid=260615818259&wid=001&eno=01&mid=s00000008903007004000&mc=1"></a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B5WGA+4A7AGI+1WP2+15P77L" alt="">`,
       trackingName: "dmm_kabushiki",
     },
   },
