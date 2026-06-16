@@ -720,26 +720,34 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
   display: flex;
   justify-content: center;
   align-items: center;
+  /* mix-blend-modeをリセットして広告内の色を正常表示 */
+  mix-blend-mode: normal;
 }
-/* 楽天テーブルのスタイル上書き */
+.affiliate-banner * {
+  mix-blend-mode: normal;
+}
+/* 楽天テーブル */
 .affiliate-banner table {
-  border-radius: var(--r-sm) !important;
-  overflow: hidden;
-  border-color: var(--border) !important;
   width: 100% !important;
-  max-width: 300px;
+  max-width: 100% !important;
+  border-color: rgba(108,63,197,0.3) !important;
+  border-radius: 8px;
 }
 .affiliate-banner table td {
-  background: rgba(13,11,26,0.8) !important;
-  color: var(--text-mute) !important;
+  background: rgba(20,16,42,0.9) !important;
 }
 .affiliate-banner table a {
   color: var(--primary-lt) !important;
-  font-size: 0.8rem !important;
+  font-size: 0.82rem !important;
+  line-height: 1.5 !important;
 }
-/* DMM株バナー */
-.affiliate-banner img[width="234"] {
-  border-radius: var(--r-sm);
+/* DMM株バナー：幅いっぱいに拡大 */
+.affiliate-banner a img {
+  width: 100% !important;
+  height: auto !important;
   max-width: 100%;
+  border-radius: var(--r-sm);
+  display: block;
+}
   height: auto;
 }
