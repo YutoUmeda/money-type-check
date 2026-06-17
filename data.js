@@ -13,9 +13,9 @@ const MONEY_DATA = {
       text: "もし今日、100万円が手に入ったら？",
       choices: [
         { label: "①貯金する",     scores: { mamoru:2, fuyasu:0, ronri:1, chokkan:0, keikaku:1, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:1 } },
-        { label: "②一部投資する", scores: { mamoru:1, fuyasu:1, ronri:2, chokkan:0, keikaku:2, chosen:0, anshin:1, jiyuu:0, shunyuKaizen:0, shisanKeisei:2 } },
-        { label: "③自己投資する", scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:1, keikaku:0, chosen:2, anshin:0, jiyuu:1, shunyuKaizen:2, shisanKeisei:1 } },
-        { label: "④体験に使う",   scores: { mamoru:0, fuyasu:1, ronri:0, chokkan:2, keikaku:0, chosen:1, anshin:0, jiyuu:2, shunyuKaizen:0, shisanKeisei:0 } },
+        { label: "②投資や株に回す", scores: { mamoru:1, fuyasu:1, ronri:2, chokkan:0, keikaku:2, chosen:0, anshin:1, jiyuu:0, shunyuKaizen:0, shisanKeisei:2 } },
+        { label: "③勉強やスキルアップに使う", scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:1, keikaku:0, chosen:2, anshin:0, jiyuu:1, shunyuKaizen:2, shisanKeisei:1 } },
+        { label: "④旅行や趣味に使う",   scores: { mamoru:0, fuyasu:1, ronri:0, chokkan:2, keikaku:0, chosen:1, anshin:0, jiyuu:2, shunyuKaizen:0, shisanKeisei:0 } },
       ]
     },
     {
@@ -53,9 +53,9 @@ const MONEY_DATA = {
       text: "ボーナスが出たら、どう使う？",
       choices: [
         { label: "①貯蓄する",       scores: { mamoru:2, fuyasu:0, ronri:0, chokkan:0, keikaku:1, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:1 } },
-        { label: "②投資する",       scores: { mamoru:0, fuyasu:2, ronri:2, chokkan:0, keikaku:2, chosen:0, anshin:1, jiyuu:0, shunyuKaizen:0, shisanKeisei:2 } },
-        { label: "③自己投資する",   scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:1, keikaku:0, chosen:2, anshin:0, jiyuu:1, shunyuKaizen:2, shisanKeisei:0 } },
-        { label: "④欲しい物を買う", scores: { mamoru:0, fuyasu:1, ronri:0, chokkan:2, keikaku:0, chosen:1, anshin:0, jiyuu:2, shunyuKaizen:0, shisanKeisei:0 } },
+        { label: "②投資や株に回す",       scores: { mamoru:0, fuyasu:2, ronri:2, chokkan:0, keikaku:2, chosen:0, anshin:1, jiyuu:0, shunyuKaizen:0, shisanKeisei:2 } },
+        { label: "③勉強やスキルアップに使う",   scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:1, keikaku:0, chosen:2, anshin:0, jiyuu:1, shunyuKaizen:2, shisanKeisei:0 } },
+        { label: "④旅行や趣味に使う", scores: { mamoru:0, fuyasu:1, ronri:0, chokkan:2, keikaku:0, chosen:1, anshin:0, jiyuu:2, shunyuKaizen:0, shisanKeisei:0 } },
       ]
     },
     {
