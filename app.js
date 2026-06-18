@@ -88,6 +88,12 @@ const App = {
       if (ageEl) ageEl.focus();
       return;
     }
+    
+        // GA4: 診断開始
+    if (typeof gtag === 'function') {
+      gtag('event', 'quiz_start');
+    }
+    
     this.state.currentQuestion = 0;
     this.state.answers = [];
     this.state.result = null;
@@ -202,6 +208,12 @@ const App = {
   // ============================================================
   finishQuiz() {
     this.showPage('loading');
+  
+    // GA4: 診断完了
+    if (typeof gtag === 'function') {
+      gtag('event', 'quiz_complete');
+    }
+  
     setTimeout(() => {
       const result = DiagnosisEngine.diagnose(this.state.answers);
       this.state.result = result;
@@ -219,6 +231,12 @@ const App = {
         this.showToast('メールアドレスの形式が正しくありません');
         return;
       }
+      
+          // GA4: メール登録
+    if (email && typeof gtag === 'function') {
+      gtag('event', 'email_registered');
+    }
+      
       this.state.email = email || null;
       this.showResult();
     });
@@ -231,7 +249,7 @@ const App = {
   isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   },
-
+  
   // ============================================================
   // 結果ページ描画
   // ============================================================
@@ -246,6 +264,14 @@ const App = {
   renderResult(t, scores) {
     const set     = (id, val) => { const el = document.getElementById(id); if (el) el.innerHTML = val; };
     const setText = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+
+      // GA4: 診断結果タイプ
+  if (typeof gtag === 'function') {
+    gtag('event', 'result_view', {
+      result_type: t.id,
+      result_name: t.name
+    });
+  }
 
     // ヒーロー
     document.getElementById('result-type-emoji').textContent = t.emoji;
@@ -350,6 +376,12 @@ const App = {
   // ============================================================
   shareToX(t) {
     this.state.xShared = true;
+    
+      // GA4: Xシェアボタンクリック
+    if (typeof gtag === 'function') {
+      gtag('event', 'x_share_click');
+    }
+    
     const url  = encodeURIComponent(window.location.href);
     const text = encodeURIComponent(
       `${t.snsText}\n「${t.catchcopy}」\n\n${t.message}\n\n#マネーアニマル診断 #マネータイプ診断 #${t.name}`
