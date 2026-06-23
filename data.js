@@ -244,7 +244,7 @@ const MONEY_DATA = {
     },
     {
       id: "cat", name: "自由キャット", emoji: "🐈",
-      axes: { mamoru:true, ronri:false, keikaku:false, anshin:true },
+      axes: { mamoru:true, ronri:false, keikaku:false, anshin:false },
       axisLabel: "守る・直感・挑戦・安心",
       catchcopy: "好きなことに一直線な探求者", subcopy: "自分らしさを何より大切にする人",
       summary: "好きを力に変えるタイプ",
@@ -265,7 +265,7 @@ const MONEY_DATA = {
     },
     {
       id: "panda", name: "のんびりパンダ", emoji: "🐼",
-      axes: { mamoru:true, ronri:false, keikaku:false, anshin:false },
+      axes: { mamoru:true, ronri:false, keikaku:false, anshin:true },
       axisLabel: "守る・直感・挑戦・自由",
       catchcopy: "肩の力を抜いて生きる達人", subcopy: "マイペースに幸せを見つける人",
       summary: "自然体で人生を楽しむタイプ",
