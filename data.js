@@ -12,80 +12,80 @@ const MONEY_DATA = {
       id: "Q1",
       text: "もし今日、100万円が手に入ったら？",
       choices: [
-        { label: "①貯金する",     scores: { mamoru:2, fuyasu:0, ronri:1, chokkan:0, keikaku:1, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:1 } },
-        { label: "②投資や株に回す", scores: { mamoru:1, fuyasu:1, ronri:2, chokkan:0, keikaku:2, chosen:0, anshin:1, jiyuu:0, shunyuKaizen:0, shisanKeisei:2 } },
-        { label: "③勉強やスキルアップに使う", scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:1, keikaku:0, chosen:2, anshin:0, jiyuu:1, shunyuKaizen:2, shisanKeisei:1 } },
-        { label: "④旅行や趣味に使う",   scores: { mamoru:0, fuyasu:1, ronri:0, chokkan:2, keikaku:0, chosen:1, anshin:0, jiyuu:2, shunyuKaizen:0, shisanKeisei:0 } },
+        { label: "①貯金する", scores: { mamoru:2, fuyasu:0, ronri:0, chokkan:0, keikaku:0, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:1 } },
+        { label: "②投資や株に回す", scores: { mamoru:0, fuyasu:0, ronri:2, chokkan:0, keikaku:2, chosen:0, anshin:0, jiyuu:0, shunyuKaizen:0, shisanKeisei:2 } },
+        { label: "③勉強やスキルアップに使う", scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:0, keikaku:0, chosen:2, anshin:0, jiyuu:0, shunyuKaizen:2, shisanKeisei:1 } },
+        { label: "④旅行や趣味に使う", scores: { mamoru:0, fuyasu:0, ronri:0, chokkan:2, keikaku:0, chosen:0, anshin:0, jiyuu:2, shunyuKaizen:0, shisanKeisei:0 } },
       ]
     },
     {
       id: "Q2",
       text: "買い物のとき、どう決める？",
       choices: [
-        { label: "①最安を探す",     scores: { mamoru:1, fuyasu:0, ronri:2, chokkan:0, keikaku:1, chosen:0, anshin:1, jiyuu:0, shunyuKaizen:0, shisanKeisei:0 } },
-        { label: "②比較して決める", scores: { mamoru:1, fuyasu:1, ronri:2, chokkan:0, keikaku:2, chosen:0, anshin:1, jiyuu:0, shunyuKaizen:0, shisanKeisei:1 } },
-        { label: "③必要なら即決",   scores: { mamoru:0, fuyasu:1, ronri:1, chokkan:0, keikaku:0, chosen:2, anshin:0, jiyuu:1, shunyuKaizen:1, shisanKeisei:0 } },
-        { label: "④直感で決める",   scores: { mamoru:0, fuyasu:0, ronri:0, chokkan:2, keikaku:0, chosen:1, anshin:0, jiyuu:2, shunyuKaizen:0, shisanKeisei:0 } },
+        { label: "①最安を探す", scores: { mamoru:2, fuyasu:0, ronri:2, chokkan:0, keikaku:0, chosen:0, anshin:0, jiyuu:0, shunyuKaizen:0, shisanKeisei:0 } },
+        { label: "②比較して決める", scores: { mamoru:0, fuyasu:0, ronri:0, chokkan:0, keikaku:2, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:1 } },
+        { label: "③必要なら即決", scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:2, keikaku:0, chosen:0, anshin:0, jiyuu:0, shunyuKaizen:1, shisanKeisei:0 } },
+        { label: "④直感で決める", scores: { mamoru:0, fuyasu:0, ronri:0, chokkan:0, keikaku:0, chosen:2, anshin:0, jiyuu:2, shunyuKaizen:0, shisanKeisei:0 } },
       ]
     },
     {
       id: "Q3",
       text: "あなたにとって「理想のお金の使い方」は？",
       choices: [
-        { label: "①安心を作る",   scores: { mamoru:2, fuyasu:0, ronri:0, chokkan:0, keikaku:1, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:0 } },
-        { label: "②資産を育てる", scores: { mamoru:0, fuyasu:2, ronri:1, chokkan:0, keikaku:2, chosen:0, anshin:1, jiyuu:0, shunyuKaizen:0, shisanKeisei:2 } },
-        { label: "③挑戦したい",   scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:0, keikaku:0, chosen:2, anshin:0, jiyuu:2, shunyuKaizen:2, shisanKeisei:0 } },
-        { label: "④人生を楽しむ", scores: { mamoru:0, fuyasu:1, ronri:0, chokkan:1, keikaku:0, chosen:1, anshin:0, jiyuu:2, shunyuKaizen:0, shisanKeisei:0 } },
+        { label: "①安心を作る", scores: { mamoru:2, fuyasu:0, ronri:0, chokkan:0, keikaku:2, chosen:0, anshin:0, jiyuu:0, shunyuKaizen:0, shisanKeisei:0 } },
+        { label: "②資産を育てる", scores: { mamoru:0, fuyasu:0, ronri:2, chokkan:0, keikaku:0, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:2 } },
+        { label: "③挑戦したい", scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:0, keikaku:0, chosen:0, anshin:0, jiyuu:2, shunyuKaizen:2, shisanKeisei:0 } },
+        { label: "④人生を楽しむ", scores: { mamoru:0, fuyasu:0, ronri:0, chokkan:2, keikaku:0, chosen:2, anshin:0, jiyuu:0, shunyuKaizen:0, shisanKeisei:0 } },
       ]
     },
     {
       id: "Q4",
       text: "投資・副業を始めるとしたら？",
       choices: [
-        { label: "①慎重に考える",   scores: { mamoru:2, fuyasu:0, ronri:1, chokkan:0, keikaku:2, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:0 } },
-        { label: "②勉強して始める", scores: { mamoru:1, fuyasu:1, ronri:2, chokkan:0, keikaku:2, chosen:0, anshin:1, jiyuu:0, shunyuKaizen:0, shisanKeisei:2 } },
-        { label: "③少額で試す",     scores: { mamoru:0, fuyasu:2, ronri:1, chokkan:0, keikaku:0, chosen:2, anshin:0, jiyuu:1, shunyuKaizen:1, shisanKeisei:1 } },
-        { label: "④まず飛び込む",   scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:2, keikaku:0, chosen:2, anshin:0, jiyuu:2, shunyuKaizen:2, shisanKeisei:0 } },
+        { label: "①慎重に考える", scores: { mamoru:2, fuyasu:0, ronri:2, chokkan:0, keikaku:0, chosen:0, anshin:0, jiyuu:0, shunyuKaizen:0, shisanKeisei:0 } },
+        { label: "②勉強して始める", scores: { mamoru:0, fuyasu:0, ronri:0, chokkan:0, keikaku:2, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:2 } },
+        { label: "③少額で試す", scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:0, keikaku:0, chosen:2, anshin:0, jiyuu:0, shunyuKaizen:1, shisanKeisei:1 } },
+        { label: "④まず飛び込む", scores: { mamoru:0, fuyasu:0, ronri:0, chokkan:2, keikaku:0, chosen:0, anshin:0, jiyuu:2, shunyuKaizen:2, shisanKeisei:0 } },
       ]
     },
     {
       id: "Q5",
       text: "ボーナスが出たら、どう使う？",
       choices: [
-        { label: "①貯蓄する",       scores: { mamoru:2, fuyasu:0, ronri:0, chokkan:0, keikaku:1, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:1 } },
-        { label: "②投資や株に回す",       scores: { mamoru:0, fuyasu:2, ronri:2, chokkan:0, keikaku:2, chosen:0, anshin:1, jiyuu:0, shunyuKaizen:0, shisanKeisei:2 } },
-        { label: "③勉強やスキルアップに使う",   scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:1, keikaku:0, chosen:2, anshin:0, jiyuu:1, shunyuKaizen:2, shisanKeisei:0 } },
-        { label: "④旅行や趣味に使う", scores: { mamoru:0, fuyasu:1, ronri:0, chokkan:2, keikaku:0, chosen:1, anshin:0, jiyuu:2, shunyuKaizen:0, shisanKeisei:0 } },
+        { label: "①貯蓄する", scores: { mamoru:2, fuyasu:0, ronri:0, chokkan:0, keikaku:0, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:1 } },
+        { label: "②投資や株に回す", scores: { mamoru:0, fuyasu:0, ronri:2, chokkan:0, keikaku:2, chosen:0, anshin:0, jiyuu:0, shunyuKaizen:0, shisanKeisei:2 } },
+        { label: "③勉強やスキルアップに使う", scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:0, keikaku:0, chosen:2, anshin:0, jiyuu:0, shunyuKaizen:2, shisanKeisei:0 } },
+        { label: "④旅行や趣味に使う", scores: { mamoru:0, fuyasu:0, ronri:0, chokkan:2, keikaku:0, chosen:0, anshin:0, jiyuu:2, shunyuKaizen:0, shisanKeisei:0 } },
       ]
     },
     {
       id: "Q6",
       text: "あなたにとって「理想の働き方」は？",
       choices: [
-        { label: "①安定して働く",   scores: { mamoru:2, fuyasu:0, ronri:1, chokkan:0, keikaku:1, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:0 } },
-        { label: "②専門性を高める", scores: { mamoru:1, fuyasu:1, ronri:2, chokkan:0, keikaku:2, chosen:0, anshin:1, jiyuu:0, shunyuKaizen:1, shisanKeisei:1 } },
-        { label: "③収入を伸ばす",   scores: { mamoru:0, fuyasu:2, ronri:1, chokkan:0, keikaku:0, chosen:2, anshin:0, jiyuu:1, shunyuKaizen:2, shisanKeisei:1 } },
-        { label: "④自由に働く",     scores: { mamoru:0, fuyasu:1, ronri:0, chokkan:2, keikaku:0, chosen:2, anshin:0, jiyuu:2, shunyuKaizen:1, shisanKeisei:0 } },
+        { label: "①安定して働く", scores: { mamoru:2, fuyasu:0, ronri:0, chokkan:0, keikaku:2, chosen:0, anshin:0, jiyuu:0, shunyuKaizen:0, shisanKeisei:0 } },
+        { label: "②専門性を高める", scores: { mamoru:0, fuyasu:0, ronri:2, chokkan:0, keikaku:0, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:1, shisanKeisei:1 } },
+        { label: "③収入を伸ばす", scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:2, keikaku:0, chosen:0, anshin:0, jiyuu:0, shunyuKaizen:2, shisanKeisei:1 } },
+        { label: "④自由に働く", scores: { mamoru:0, fuyasu:0, ronri:0, chokkan:0, keikaku:0, chosen:2, anshin:0, jiyuu:2, shunyuKaizen:1, shisanKeisei:0 } },
       ]
     },
     {
       id: "Q7",
       text: "一番共感できるのはどれ？",
       choices: [
-        { label: "①失敗したくない",   scores: { mamoru:2, fuyasu:0, ronri:1, chokkan:0, keikaku:2, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:0 } },
-        { label: "②納得して動く",     scores: { mamoru:1, fuyasu:0, ronri:2, chokkan:0, keikaku:2, chosen:0, anshin:1, jiyuu:0, shunyuKaizen:0, shisanKeisei:1 } },
-        { label: "③成長したい",       scores: { mamoru:0, fuyasu:2, ronri:1, chokkan:0, keikaku:0, chosen:2, anshin:0, jiyuu:1, shunyuKaizen:2, shisanKeisei:1 } },
-        { label: "④楽しそうならやる", scores: { mamoru:0, fuyasu:1, ronri:0, chokkan:2, keikaku:0, chosen:2, anshin:0, jiyuu:2, shunyuKaizen:0, shisanKeisei:0 } },
+        { label: "①失敗したくない", scores: { mamoru:2, fuyasu:0, ronri:2, chokkan:0, keikaku:0, chosen:0, anshin:0, jiyuu:0, shunyuKaizen:0, shisanKeisei:0 } },
+        { label: "②納得して動く", scores: { mamoru:0, fuyasu:0, ronri:0, chokkan:0, keikaku:2, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:1 } },
+        { label: "③成長したい", scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:0, keikaku:0, chosen:2, anshin:0, jiyuu:0, shunyuKaizen:2, shisanKeisei:1 } },
+        { label: "④楽しそうならやる", scores: { mamoru:0, fuyasu:0, ronri:0, chokkan:2, keikaku:0, chosen:0, anshin:0, jiyuu:2, shunyuKaizen:0, shisanKeisei:0 } },
       ]
     },
     {
       id: "Q8",
       text: "友人から新しい投資や副業を勧められたら？",
       choices: [
-        { label: "①様子を見る",           scores: { mamoru:2, fuyasu:0, ronri:1, chokkan:0, keikaku:2, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:0 } },
-        { label: "②調べて判断する",       scores: { mamoru:1, fuyasu:1, ronri:2, chokkan:0, keikaku:2, chosen:0, anshin:1, jiyuu:0, shunyuKaizen:0, shisanKeisei:2 } },
-        { label: "③少額で試す",           scores: { mamoru:0, fuyasu:2, ronri:1, chokkan:0, keikaku:0, chosen:2, anshin:0, jiyuu:1, shunyuKaizen:1, shisanKeisei:1 } },
-        { label: "④ワクワクするかで決断", scores: { mamoru:0, fuyasu:1, ronri:0, chokkan:2, keikaku:0, chosen:2, anshin:0, jiyuu:2, shunyuKaizen:1, shisanKeisei:0 } },
+        { label: "①様子を見る", scores: { mamoru:2, fuyasu:0, ronri:0, chokkan:0, keikaku:0, chosen:0, anshin:2, jiyuu:0, shunyuKaizen:0, shisanKeisei:0 } },
+        { label: "②調べて判断する", scores: { mamoru:0, fuyasu:0, ronri:2, chokkan:0, keikaku:2, chosen:0, anshin:0, jiyuu:0, shunyuKaizen:0, shisanKeisei:2 } },
+        { label: "③少額で試す", scores: { mamoru:0, fuyasu:2, ronri:0, chokkan:2, keikaku:0, chosen:0, anshin:0, jiyuu:0, shunyuKaizen:1, shisanKeisei:1 } },
+        { label: "④ワクワクするかで決断", scores: { mamoru:0, fuyasu:0, ronri:0, chokkan:0, keikaku:0, chosen:2, anshin:0, jiyuu:2, shunyuKaizen:1, shisanKeisei:0 } },
       ]
     },
     {
